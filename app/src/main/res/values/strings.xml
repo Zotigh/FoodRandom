@@ -1,0 +1,10 @@
+<resources>
+  <string name="app_name">Food(Random)</string>
+  <string name="title_random">randomize</string>
+  <string name="title_saved_recipes">Saved Recipes</string>
+  <string name="title_nutritional_value">Nutritional Value</string>
+  <string name="title_randomize">Randomize!</string>
+  <string name="saved_recipes_fragment">saved recipes Fragment</string>
+  <string name="nutritional_value">favorites Nutritional Value</string>
+  <string name="randomize_fragment">Randomize Fragment</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:id="@+id/navigation_randomize"
+    android:icon="@drawable/ic_shuffle"
+    android:title="@string/title_randomize"/>
+
+  <item
+    android:id="@+id/navigation_recipes"
+    android:icon="@drawable/ic_save"
+    android:title="@string/title_saved_recipes"/>
+
+  <item
+    android:id="@+id/navigation_nutritional_value"
+    android:icon="@drawable/ic_insert_chart"
+    android:title="@string/title_nutritional_value"/>
+
+</menu>
