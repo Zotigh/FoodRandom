@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     //I added this if statement to keep the selected fragment when rotating the device
     if (savedInstanceState == null) {
       getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-          new HomeFragment()).commit();
+          new RandomizeFragment()).commit();
     }
   }
 
@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
           switch (item.getItemId()) {
             case R.id.navigation_randomize:
-              selectedFragment = new HomeFragment();
-              break;
-            case R.id.navigation_recipes:
-              selectedFragment = new SearchFragment();
+              selectedFragment = new RandomizeFragment();
               break;
             case R.id.navigation_nutritional_value:
-              selectedFragment = new FavoritesFragment();
+              selectedFragment = new NutritionalValueFragment();
+              break;
+            case R.id.navigation_recipes:
+              selectedFragment = new SavedRecipesFragment();
               break;
           }
 

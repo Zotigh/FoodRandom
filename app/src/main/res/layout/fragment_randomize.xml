@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   android:background="@android:color/holo_red_light">
 
   <TextView
@@ -10,5 +12,16 @@
     android:text="@string/randomize_fragment"
     android:textSize="30sp"
     android:layout_centerInParent="true"/>
+
+
+  <Button
+    android:id="@+id/randomize_button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="36dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentStart="true"
+    android:textAppearance="@style/TextAppearance.AppCompat"
+    tools:text="Randomize!"/>
 
 </RelativeLayout>
