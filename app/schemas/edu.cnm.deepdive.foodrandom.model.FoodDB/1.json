@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "28a0f9b9ef8e0d2356f1ae017549736d",
+    "identityHash": "aa8878943904e8302e9ce89069f8abda",
     "entities": [
       {
         "tableName": "Recipe",
@@ -50,7 +50,7 @@
       },
       {
         "tableName": "Nutrition",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`access_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `recipe_id` TEXT, `attribute` TEXT, `value` REAL NOT NULL, FOREIGN KEY(`recipe_id`) REFERENCES `Nutrition`(`access_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`access_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `recipe_id` TEXT, `attribute` TEXT, `value` REAL NOT NULL, FOREIGN KEY(`recipe_id`) REFERENCES `Recipe`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -95,14 +95,14 @@
         ],
         "foreignKeys": [
           {
-            "table": "Nutrition",
+            "table": "Recipe",
             "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
             "columns": [
               "recipe_id"
             ],
             "referencedColumns": [
-              "access_id"
+              "id"
             ]
           }
         ]
@@ -110,7 +110,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"28a0f9b9ef8e0d2356f1ae017549736d\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"aa8878943904e8302e9ce89069f8abda\")"
     ]
   }
 }

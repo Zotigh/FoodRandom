@@ -9,8 +9,8 @@ import com.google.gson.annotations.Expose;
 
 @Entity(
     foreignKeys = @ForeignKey(
-        entity = edu.cnm.deepdive.foodrandom.model.entity.Nutrition.class,
-        parentColumns = "access_id", childColumns = "recipe_id",
+        entity = edu.cnm.deepdive.foodrandom.model.entity.Recipe.class,
+        parentColumns = "id", childColumns = "recipe_id",
         onDelete = ForeignKey.CASCADE
     ),
     indices = @Index("recipe_id")
