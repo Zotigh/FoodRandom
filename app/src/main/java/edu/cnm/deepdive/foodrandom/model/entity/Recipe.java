@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.foodrandom.model.entity.entity;
+package edu.cnm.deepdive.foodrandom.model.entity;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;

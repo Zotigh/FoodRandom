@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.foodrandom.model.entity.entity;
+package edu.cnm.deepdive.foodrandom.model.entity;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
@@ -6,7 +6,7 @@ import com.google.gson.annotations.Expose;
 
 @Entity(
     foreignKeys = @ForeignKey(
-        entity = Recipe.class,
+        entity = edu.cnm.deepdive.foodrandom.model.entity.Nutrition.class,
         parentColumns = "id", childColumns = "recipes_id",
         onDelete = ForeignKey.CASCADE
     )
