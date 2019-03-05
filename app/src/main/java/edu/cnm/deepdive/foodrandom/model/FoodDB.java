@@ -3,8 +3,9 @@ package edu.cnm.deepdive.foodrandom.model;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.TypeConverters;
-import edu.cnm.deepdive.foodrandom.model.entity.entity.Nutrition;
-import edu.cnm.deepdive.foodrandom.model.entity.entity.Recipe;
+import edu.cnm.deepdive.foodrandom.model.FoodDB.Converters;
+import edu.cnm.deepdive.foodrandom.model.entity.Nutrition;
+import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
 
 @Database(
     entities = {Recipe.class, Nutrition.class},
