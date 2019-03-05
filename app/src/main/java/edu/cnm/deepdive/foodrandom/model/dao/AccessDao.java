@@ -1,6 +1,7 @@
 package edu.cnm.deepdive.foodrandom.model.dao;
 
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
@@ -9,10 +10,10 @@ import java.util.List;
 
 @Dao
 public interface AccessDao {
+
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  List<String> insert(Recipe... ingredients);
+  void insert(Recipe... recipes);
 
-@Query("SELECT * FROM Recipe ORDER BY ingredients DESC")
-  List<Recipe> findAll();
-
+  @Delete
+  int delete(Recipe... recipeName);
 }
