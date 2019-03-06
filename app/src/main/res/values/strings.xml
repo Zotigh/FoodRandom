@@ -1,20 +1,31 @@
 <resources>
-  <string name="app_name">Food(Random)</string>
+  <string name="app_name">RanFoo</string>
   <string name="title_random">randomize</string>
   <string name="title_saved_recipes">Saved Recipes</string>
   <string name="title_nutritional_value">Nutritional Value</string>
   <string name="title_randomize">Randomize!</string>
   <string name="saved_recipes_fragment">saved recipes Fragment</string>
-  <string name="nutritional_value">favorites Nutritional Value</string>
+  <string name="nutritional_value">Nutritional Values Fragment</string>
   <string name="randomize_fragment">Randomize Fragment</string>
   <string name="choose_meat">Choose Meat</string>
   <string name="choose_vegetable">Choose Vegetable</string>
   <string name="randomize">Randomize!</string>
-  <string-array name="numbers">
+
+  <string-array name="meat_selection">
     <item>Ground Beef</item>
     <item>Chicken Breast</item>
     <item>Salmon</item>
     <item>Turkey</item>
     <item>Pork</item>
+    <item>Fuckin Steak</item>
+  </string-array>
+
+  <string-array name="vegetables_selection">
+    <item>Broccoli</item>
+    <item>Potatoes</item>
+    <item>Carrrot's</item>
+    <item>peas</item>
+    <item>asparagus</item>
+    <item>spinach</item>
   </string-array>
 </resources>

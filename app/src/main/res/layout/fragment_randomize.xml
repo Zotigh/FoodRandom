@@ -17,10 +17,9 @@
     android:id="@+id/spinnerMeat"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="100dp"
+    android:layout_marginTop="56dp"
     android:spinnerMode="dialog"
-    android:text="@string/choose_meat"
-    />
+    android:text="@string/choose_meat"/>
 
   <Spinner
     android:id="@+id/spinnerVegetable"
