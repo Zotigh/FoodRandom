@@ -10,6 +10,7 @@
   <string name="choose_meat">Choose Meat</string>
   <string name="choose_vegetable">Choose Vegetable</string>
   <string name="randomize">Randomize!</string>
+  <string name="popup_Results_fragment">Results fragment popup</string>
 
   <string-array name="meat_selection">
     <item>Ground Beef</item>
@@ -17,7 +18,7 @@
     <item>Salmon</item>
     <item>Turkey</item>
     <item>Pork</item>
-    <item>Fuckin Steak</item>
+    <item>Fuckin Steak!</item>
   </string-array>
 
   <string-array name="vegetables_selection">
@@ -28,4 +29,5 @@
     <item>asparagus</item>
     <item>spinach</item>
   </string-array>
+
 </resources>

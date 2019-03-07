@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,7 +15,7 @@ import edu.cnm.deepdive.foodrandom.R;
 
 public class RandomizeFragment extends Fragment{
 
-  Spinner spinnerVegitable;
+  Spinner spinnerVegetable;
   Spinner spinnerMeat;
   Button ranButton;
 
@@ -25,7 +26,7 @@ public class RandomizeFragment extends Fragment{
       @Nullable Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_randomize, container, false);
 
-    spinnerVegitable = view.findViewById(R.id.spinnerVegetable);
+    spinnerVegetable = view.findViewById(R.id.spinnerVegetable);
     spinnerMeat =  view.findViewById(R.id.spinnerMeat);
 
     ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getActivity(),
@@ -36,16 +37,18 @@ public class RandomizeFragment extends Fragment{
     ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getActivity(),
         R.array.vegetables_selection, android.R.layout.simple_spinner_item);
     adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-    spinnerVegitable.setAdapter(adapter2);
+    spinnerVegetable.setAdapter(adapter2);
 
 //    ranButton.setOnClickListener(new OnClickListener() {
 //      @Override
 //      public void onClick(View view) {
 //        spinnerMeat.getSelectedItem().toString();
-//        spinnerVegitable.getSelectedItem().toString();
+//        spinnerVegetable.getSelectedItem().toString();
+//
 //      }
 //    });
     spinnerMeat.getSelectedItem();
+    spinnerVegetable.getSelectedItem();
 
     return view;
 
