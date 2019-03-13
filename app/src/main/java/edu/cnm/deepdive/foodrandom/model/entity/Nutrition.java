@@ -10,7 +10,7 @@ import com.google.gson.annotations.Expose;
 @Entity(
     foreignKeys = @ForeignKey(
         entity = edu.cnm.deepdive.foodrandom.model.entity.Recipe.class,
-        parentColumns = "id", childColumns = "recipe_id",
+        parentColumns = "recipe_id", childColumns = "recipe_id",
         onDelete = ForeignKey.CASCADE
     ),
     indices = @Index("recipe_id")
@@ -23,7 +23,7 @@ public class Nutrition {
 
   @ColumnInfo(name = "recipe_id")
   @Expose
-  private String recipeId;
+  private long recipeId;
 
   @Expose
   private String attribute;
@@ -56,11 +56,11 @@ public class Nutrition {
     this.id = id;
   }
 
-  public String getRecipeId() {
+  public long getRecipeId() {
     return recipeId;
   }
 
-  public void setRecipeId(String recipeId) {
+  public void setRecipeId(long recipeId) {
     this.recipeId = recipeId;
   }
 }

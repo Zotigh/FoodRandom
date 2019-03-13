@@ -5,55 +5,50 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 @Entity
 public class Recipe {
 
-  @ColumnInfo(name = "id")
-  @NonNull
-  @PrimaryKey
-  private String id;
+  @ColumnInfo(name = "recipe_id")
+  @PrimaryKey(autoGenerate = true)
+  private long id;
 
   @NonNull
   @Expose
-  private String ingredients;
+  private String[] ingredients;
 
-  @ColumnInfo(name = "recipe_name")
   @Expose
   private String recipeName;
 
-  @ColumnInfo(name = "nutrition_Estimates")
+  @ColumnInfo(name = "nutrition_estimates")
   @Expose
   private String nutritionEstimates;
 
-  @ColumnInfo(name = "total_time_in_seconds")
   @Expose
-  private long totalTimeInSeconds;
+  private int totalTimeInSeconds;
 
-  private class Images {
-    @ColumnInfo(name = "hosted_large_url")
-    @Expose
-    private String hostedLargeUrl;
+  @Expose
+  private String[] smallImageUrls;
 
-    @ColumnInfo(name = "hosted_small_url")
-    @Expose
-    private String hostedSmallUrl;
-  }
+  @Expose
+  @SerializedName("id")
+  private String recipeKey;
 
-  public String getId() {
+  public long getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(long id) {
     this.id = id;
   }
 
   @NonNull
-  public String getIngredients() {
+  public String[] getIngredients() {
     return ingredients;
   }
 
-  public void setIngredients(@NonNull String ingredients) {
+  public void setIngredients(@NonNull String[] ingredients) {
     this.ingredients = ingredients;
   }
 
@@ -73,11 +68,27 @@ public class Recipe {
     this.nutritionEstimates = nutritionEstimates;
   }
 
-  public long getTotalTimeInSeconds() {
+  public int getTotalTimeInSeconds() {
     return totalTimeInSeconds;
   }
 
-  public void setTotalTimeInSeconds(long totalTimeInSeconds) {
+  public void setTotalTimeInSeconds(int totalTimeInSeconds) {
     this.totalTimeInSeconds = totalTimeInSeconds;
+  }
+
+  public String[] getSmallImageUrls() {
+    return smallImageUrls;
+  }
+
+  public void setSmallImageUrls(String[] smallImageUrls) {
+    this.smallImageUrls = smallImageUrls;
+  }
+
+  public String getRecipeKey() {
+    return recipeKey;
+  }
+
+  public void setRecipeKey(String recipeKey) {
+    this.recipeKey = recipeKey;
   }
 }
