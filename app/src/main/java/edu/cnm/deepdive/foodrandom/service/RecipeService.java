@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import edu.cnm.deepdive.foodrandom.BuildConfig;
 import edu.cnm.deepdive.foodrandom.FoodApplication;
 import edu.cnm.deepdive.foodrandom.R;
+import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
 import edu.cnm.deepdive.foodrandom.model.pojo.RecipeResponse;
 import java.io.IOException;
 import retrofit2.Call;
@@ -43,18 +44,18 @@ public interface RecipeService {
 
   }
 
-  class RecipesTask extends BaseFluentAsyncTask<String, Void, RecipeResponse, RecipeResponse> {
+  class RecipesTask extends BaseFluentAsyncTask<String, Void, Recipe, Recipe> {
 
     @Nullable
     @Override
-    protected RecipeResponse perform(String... strings) throws TaskException {
+    protected Recipe perform(String... strings) throws TaskException {
       try {
         Response<RecipeResponse> response = InstanceHolder.INSTANCE.getRecipes(InstanceHolder.APP_ID,
             InstanceHolder.API_KEY, strings[0]).execute();
         if (!response.isSuccessful()) {
           throw new TaskException();
         }
-        return response.body();
+        return response.body().getRandomMatch();
       } catch (Exception e) {
         throw  new RuntimeException(e);
       }

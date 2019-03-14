@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +35,8 @@ public class RandomizeFragment extends Fragment {
   private Button ranButton;
   private EditText textInputIngredient;
   private RecipeService service;
-  private Random rng;
+  private ListView recipesListView;
+  private Editable edit = null;
 
 
   @Nullable
@@ -41,15 +44,18 @@ public class RandomizeFragment extends Fragment {
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_randomize, container, false);
+
     textInputIngredient = view.findViewById(R.id.text_input_ingredient);
     ranButton = view.findViewById(R.id.randomize_button);
+    recipesListView = view.findViewById(R.id.random_recipe_result);
     ranButton.setOnClickListener((v) -> new RecipeService.RecipesTask()
         .setSuccessListener((result) -> {
           // TODO Use result.matches to display and/or write to database.
-          result.getMatches();
+          ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, result.getIngredients());
+          recipesListView.setAdapter(adapter);
           Log.d(getClass().getSimpleName(), result.toString());
         })
-        .execute(textInputIngredient.getText().toString()));
+        .execute(textInputIngredient.getText().toString())); //TODO Do something with my rng
     return view;
   }
 
