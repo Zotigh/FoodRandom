@@ -8,7 +8,6 @@ import edu.cnm.deepdive.foodrandom.FoodApplication;
 import edu.cnm.deepdive.foodrandom.R;
 import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
 import edu.cnm.deepdive.foodrandom.model.pojo.RecipeResponse;
-import java.io.IOException;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
@@ -55,9 +54,10 @@ public interface RecipeService {
         if (!response.isSuccessful()) {
           throw new TaskException();
         }
+        assert response.body() != null;
         return response.body().getRandomMatch();
       } catch (Exception e) {
-        throw  new RuntimeException(e);
+        throw new RuntimeException(e);
       }
     }
 
