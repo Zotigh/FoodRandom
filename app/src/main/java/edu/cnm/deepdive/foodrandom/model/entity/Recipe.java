@@ -91,4 +91,10 @@ public class Recipe {
   public void setRecipeKey(String recipeKey) {
     this.recipeKey = recipeKey;
   }
+
+  @Override
+  public String toString() {
+    return recipeName;
+  }
+
 }

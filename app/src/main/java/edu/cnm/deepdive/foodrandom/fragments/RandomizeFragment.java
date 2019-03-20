@@ -1,5 +1,6 @@
 package edu.cnm.deepdive.foodrandom.fragments;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,9 +18,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import edu.cnm.deepdive.foodrandom.R;
+import edu.cnm.deepdive.foodrandom.model.FoodDB;
 import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
 import edu.cnm.deepdive.foodrandom.model.pojo.RecipeResponse;
 import edu.cnm.deepdive.foodrandom.service.RecipeService;
+import java.util.Objects;
 
 public class RandomizeFragment extends Fragment {
 
@@ -30,6 +33,7 @@ public class RandomizeFragment extends Fragment {
   private Editable edit = null;
   private ImageView imageView;
   private TextView textView;
+  private Button saveButton;
 
 
   @Nullable
@@ -43,20 +47,31 @@ public class RandomizeFragment extends Fragment {
     recipesListView = view.findViewById(R.id.random_recipe_result);
     imageView = view.findViewById(R.id.recipe_image);
     textView = view.findViewById(R.id.recipe_name);
+    saveButton = view.findViewById(R.id.save_button);
 
     ranButton.setOnClickListener((v) -> new RecipeService.RecipesTask()
         .setSuccessListener((result) -> {
-          // TODO Use result.matches to display and/or write to database.
-          ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, result.getIngredients());
+          ArrayAdapter<String> adapter = new ArrayAdapter<>(
+              Objects.requireNonNull(this.getContext()), android.R.layout.simple_list_item_1, result.getIngredients());
           textView.setText(result.getRecipeName());
           Glide.with(imageView).load(result.getSmallImageUrls()[0]).into(imageView);
           recipesListView.setAdapter(adapter);
           Log.d(getClass().getSimpleName(), result.toString());
+          saveButton.setOnClickListener((b) -> new SaveRecipeTask().execute(result));
         })
         .execute(textInputIngredient.getText().toString()));
     return view;
   }
 
+
+  private static class SaveRecipeTask extends AsyncTask<Recipe, Void, Void> {
+
+    @Override
+    protected Void doInBackground(Recipe... recipes) {
+      FoodDB.getInstance().getRecipeDao().insert(recipes);
+      return null;
+    }
+  }
 //  private boolean validateIngredient() {
 //    String ingredientInput = textInputIngredient.getEditText().getText().toString().trim();
 //

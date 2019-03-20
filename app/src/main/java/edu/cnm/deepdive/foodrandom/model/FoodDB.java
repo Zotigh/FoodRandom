@@ -8,6 +8,7 @@ import android.arch.persistence.room.TypeConverters;
 import edu.cnm.deepdive.foodrandom.FoodApplication;
 import edu.cnm.deepdive.foodrandom.model.FoodDB.Converters;
 import edu.cnm.deepdive.foodrandom.model.dao.AccessDao;
+import edu.cnm.deepdive.foodrandom.model.dao.RecipeDao;
 import edu.cnm.deepdive.foodrandom.model.entity.Nutrition;
 import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
 
@@ -24,6 +25,8 @@ public abstract class FoodDB extends RoomDatabase {
   public synchronized static FoodDB getInstance() {
     return InstanceHolder.INSTANCE;
   }
+
+  public abstract RecipeDao getRecipeDao();
 
   public abstract AccessDao getAccessDao();
 

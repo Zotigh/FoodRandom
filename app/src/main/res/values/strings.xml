@@ -35,4 +35,5 @@
 
   <string name="base_url">http://api.yummly.com/v1/</string>
   <string name="returned_recipe_rng">DEFAULT</string>
+  <string name="save_recipe">Save Recipe</string>
 </resources>
