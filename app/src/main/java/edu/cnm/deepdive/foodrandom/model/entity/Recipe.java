@@ -19,6 +19,7 @@ public class Recipe {
   private String[] ingredients;
 
   @Expose
+  @ColumnInfo(name = "recipe_name")
   private String recipeName;
 
   @ColumnInfo(name = "nutrition_estimates")

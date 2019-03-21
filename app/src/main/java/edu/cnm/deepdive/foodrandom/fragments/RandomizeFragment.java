@@ -20,7 +20,6 @@ import com.bumptech.glide.Glide;
 import edu.cnm.deepdive.foodrandom.R;
 import edu.cnm.deepdive.foodrandom.model.FoodDB;
 import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
-import edu.cnm.deepdive.foodrandom.model.pojo.RecipeResponse;
 import edu.cnm.deepdive.foodrandom.service.RecipeService;
 import java.util.Objects;
 

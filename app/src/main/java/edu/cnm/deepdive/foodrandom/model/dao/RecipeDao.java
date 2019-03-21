@@ -10,8 +10,11 @@ import java.util.List;
 @Dao
 public interface RecipeDao {
 
-  @Query("SELECT * FROM Recipe ORDER BY recipeName DESC")
+  @Query("SELECT * FROM Recipe ORDER BY recipe_name DESC")
   List<Recipe> findAll();
+
+  @Query("SELECT * FROM Recipe WHERE recipe_id = :recipeId")
+  Recipe findById(long recipeId);
 
   @Insert
   List<Long> insert(Recipe... recipes);
