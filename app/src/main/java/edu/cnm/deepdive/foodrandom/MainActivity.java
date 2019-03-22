@@ -6,9 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import edu.cnm.deepdive.foodrandom.fragments.NutritionalValueFragment;
 import edu.cnm.deepdive.foodrandom.fragments.RandomizeFragment;
-import edu.cnm.deepdive.foodrandom.fragments.SavedRecipesFragment;
+import edu.cnm.deepdive.foodrandom.controller.SavedRecipesFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.navigation_randomize:
               selectedFragment = new RandomizeFragment();
               break;
-            case R.id.navigation_nutritional_value:
-              selectedFragment = new NutritionalValueFragment();
-              break;
+//            case R.id.navigation_nutritional_value:
+//              selectedFragment = new NutritionalValueFragment();
+//              break;
             case R.id.navigation_recipes:
               selectedFragment = new SavedRecipesFragment();
               break;

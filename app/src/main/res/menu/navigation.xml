@@ -11,9 +11,9 @@
     android:icon="@drawable/ic_save"
     android:title="@string/title_saved_recipes"/>
 
-  <item
-    android:id="@+id/navigation_nutritional_value"
-    android:icon="@drawable/ic_insert_chart"
-    android:title="@string/title_nutritional_value"/>
+  <!--<item-->
+    <!--android:id="@+id/navigation_nutritional_value"-->
+    <!--android:icon="@drawable/ic_insert_chart"-->
+    <!--android:title="@string/title_nutritional_value"/>-->
 
 </menu>

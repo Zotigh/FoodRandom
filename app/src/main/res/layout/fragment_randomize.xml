@@ -7,14 +7,14 @@
   android:background="@android:color/white"
   android:orientation="vertical">
 
-<!--
-  <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/randomize_fragment"
-    android:textSize="30sp"
-    android:textStyle="bold"/>
--->
+  <!--
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/randomize_fragment"
+      android:textSize="30sp"
+      android:textStyle="bold"/>
+  -->
 
   <!--
   <Spinner
@@ -54,22 +54,33 @@
     android:textAppearance="@style/TextAppearance.AppCompat"
     android:text="@string/randomize"/>
 
+
   <TextView
     android:id="@+id/recipe_name"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textStyle="bold"/>
+    android:textStyle="bold"
+    android:layout_gravity="center"/>
 
   <ImageView
     android:id="@+id/recipe_image"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"/>
+
+  <Button
+    android:id="@+id/save_button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="36dp"
+    android:textAppearance="@style/TextAppearance.AppCompat"
+    android:text="@string/save_recipe"/>
 
   <ListView
     android:id="@+id/random_recipe_result"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:text="@string/returned_recipe_rng"/>
-  
+
 
 </LinearLayout>
