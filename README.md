@@ -1,4 +1,4 @@
-# FoodRandomizer1
+# FoodRandom(RanFoo)
 
 ## generate a random food plate
 
@@ -7,7 +7,7 @@
  * The basic functionality will be to randomize food based on something the users types and return a name, picture and list of ingredients to see if that would be something they would like to make.
  * I feel that the people that would be intersted are those people that have no clue as to the many ways you can cook something and this will open the door to more opportunities to explore different dishes. I often have this problem and think it would be nice to have something like this.
 
- ** User Stories
+ # User Stories
  	
   * AS A/AN...  I WANT TO...	 SO THAT...
  	* As a (User) I want to (Have a system that can take what I like and make a random decision) so that (I dont have to decide what to make for a meal.) 
