@@ -5,38 +5,13 @@
   <string name="title_nutritional_value">Nutritional Value</string>
   <string name="title_randomize">Randomize!</string>
   <string name="saved_recipes_fragment">saved recipes Fragment</string>
-  <string name="nutritional_value">Nutritional Values Fragment</string>
   <string name="randomize_fragment">Enter a Main Ingredient you would like to find a randomized recipe for</string>
-  <string name="choose_meat">Choose Meat</string>
-  <string name="choose_vegetable">Choose Vegetable</string>
   <string name="randomize">Randomize!</string>
   <string name="popup_Results_fragment">Results fragment popup</string>
   <string name="please_enter_main_ingredient">Please enter Ingredient</string>
-  <string name="volley_error_message">That didn\'t work!</string>
   <string name="on_response">Response is:</string>
-
-  <string-array name="meat_selection">
-    <item>Ground Beef</item>
-    <item>Chicken Breast</item>
-    <item>Salmon</item>
-    <item>Turkey</item>
-    <item>Pork</item>
-    <item>Fuckin Steak!</item>
-  </string-array>
-
-  <string-array name="vegetables_selection">
-    <item>Broccoli</item>
-    <item>Potatoes</item>
-    <item>Carrrot's</item>
-    <item>peas</item>
-    <item>asparagus</item>
-    <item>spinach</item>
-  </string-array>
 
   <string name="base_url">http://api.yummly.com/v1/</string>
   <string name="returned_recipe_rng">DEFAULT</string>
   <string name="save_recipe">Save Recipe</string>
-
-  <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -12,7 +12,7 @@ import edu.cnm.deepdive.foodrandom.model.dao.RecipeDao;
 import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
 
 @Database(
-    entities = {Recipe.class,},
+    entities = {Recipe.class},
     version = 1,
     exportSchema = true
 )
