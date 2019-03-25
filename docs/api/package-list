@@ -1,0 +1,8 @@
+edu.cnm.deepdive.foodrandom
+edu.cnm.deepdive.foodrandom.controller
+edu.cnm.deepdive.foodrandom.fragments
+edu.cnm.deepdive.foodrandom.model
+edu.cnm.deepdive.foodrandom.model.dao
+edu.cnm.deepdive.foodrandom.model.entity
+edu.cnm.deepdive.foodrandom.model.pojo
+edu.cnm.deepdive.foodrandom.service

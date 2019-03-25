@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,8 @@ public class SavedRecipesFragment extends Fragment implements OnItemClickListene
       @Nullable Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_saved_recipes, container, false);
 
+
+
     ListView listView = view.findViewById(R.id.recipe_list);
     listView.setOnItemClickListener(this);
     recipes = new LinkedList<>();
@@ -43,7 +46,9 @@ public class SavedRecipesFragment extends Fragment implements OnItemClickListene
     listView.setOnItemClickListener((adapterView, view1, i, l) -> {
       DisplaySavedRecipesFragment details = DisplaySavedRecipesFragment.newInstance(recipes.get(i).getId());
       assert getFragmentManager() != null;
-      getFragmentManager().beginTransaction().replace(R.id.fragment_container, details).commit();
+      FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.fragment_container, details);
+      ft.addToBackStack(null);
+      ft.commit();
     });
 
     new AsyncTask<Void, Void, List<Recipe>>() {

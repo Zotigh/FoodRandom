@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "4a4479d57d233aa789af5e08d3816a64",
+    "identityHash": "69303d144229a5c55025e142cce60195",
     "entities": [
       {
         "tableName": "Recipe",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`recipe_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `ingredients` TEXT NOT NULL, `recipeName` TEXT, `nutrition_estimates` TEXT, `totalTimeInSeconds` INTEGER NOT NULL, `smallImageUrls` TEXT, `recipeKey` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`recipe_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `ingredients` TEXT NOT NULL, `recipe_name` TEXT, `smallImageUrls` TEXT, `recipeKey` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -22,21 +22,9 @@
           },
           {
             "fieldPath": "recipeName",
-            "columnName": "recipeName",
+            "columnName": "recipe_name",
             "affinity": "TEXT",
             "notNull": false
-          },
-          {
-            "fieldPath": "nutritionEstimates",
-            "columnName": "nutrition_estimates",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "totalTimeInSeconds",
-            "columnName": "totalTimeInSeconds",
-            "affinity": "INTEGER",
-            "notNull": true
           },
           {
             "fieldPath": "smallImageUrls",
@@ -59,70 +47,11 @@
         },
         "indices": [],
         "foreignKeys": []
-      },
-      {
-        "tableName": "Nutrition",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`access_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `recipe_id` INTEGER NOT NULL, `attribute` TEXT, `value` REAL NOT NULL, FOREIGN KEY(`recipe_id`) REFERENCES `Recipe`(`recipe_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
-        "fields": [
-          {
-            "fieldPath": "id",
-            "columnName": "access_id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "recipeId",
-            "columnName": "recipe_id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "attribute",
-            "columnName": "attribute",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "value",
-            "columnName": "value",
-            "affinity": "REAL",
-            "notNull": true
-          }
-        ],
-        "primaryKey": {
-          "columnNames": [
-            "access_id"
-          ],
-          "autoGenerate": true
-        },
-        "indices": [
-          {
-            "name": "index_Nutrition_recipe_id",
-            "unique": false,
-            "columnNames": [
-              "recipe_id"
-            ],
-            "createSql": "CREATE  INDEX `index_Nutrition_recipe_id` ON `${TABLE_NAME}` (`recipe_id`)"
-          }
-        ],
-        "foreignKeys": [
-          {
-            "table": "Recipe",
-            "onDelete": "CASCADE",
-            "onUpdate": "NO ACTION",
-            "columns": [
-              "recipe_id"
-            ],
-            "referencedColumns": [
-              "recipe_id"
-            ]
-          }
-        ]
       }
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"4a4479d57d233aa789af5e08d3816a64\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"69303d144229a5c55025e142cce60195\")"
     ]
   }
 }

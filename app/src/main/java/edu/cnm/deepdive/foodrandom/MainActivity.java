@@ -1,5 +1,7 @@
 package edu.cnm.deepdive.foodrandom;
 
+import static edu.cnm.deepdive.foodrandom.R.styleable.BottomNavigationView;
+
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -36,9 +38,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.navigation_randomize:
               selectedFragment = new RandomizeFragment();
               break;
-//            case R.id.navigation_nutritional_value:
-//              selectedFragment = new NutritionalValueFragment();
-//              break;
             case R.id.navigation_recipes:
               selectedFragment = new SavedRecipesFragment();
               break;

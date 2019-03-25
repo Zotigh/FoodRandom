@@ -9,11 +9,10 @@ import edu.cnm.deepdive.foodrandom.FoodApplication;
 import edu.cnm.deepdive.foodrandom.model.FoodDB.Converters;
 import edu.cnm.deepdive.foodrandom.model.dao.AccessDao;
 import edu.cnm.deepdive.foodrandom.model.dao.RecipeDao;
-import edu.cnm.deepdive.foodrandom.model.entity.Nutrition;
 import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
 
 @Database(
-    entities = {Recipe.class, Nutrition.class},
+    entities = {Recipe.class,},
     version = 1,
     exportSchema = true
 )

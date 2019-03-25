@@ -22,13 +22,6 @@ public class Recipe {
   @ColumnInfo(name = "recipe_name")
   private String recipeName;
 
-  @ColumnInfo(name = "nutrition_estimates")
-  @Expose
-  private String nutritionEstimates;
-
-  @Expose
-  private int totalTimeInSeconds;
-
   @Expose
   private String[] smallImageUrls;
 
@@ -61,21 +54,6 @@ public class Recipe {
     this.recipeName = recipeName;
   }
 
-  public String getNutritionEstimates() {
-    return nutritionEstimates;
-  }
-
-  public void setNutritionEstimates(String nutritionEstimates) {
-    this.nutritionEstimates = nutritionEstimates;
-  }
-
-  public int getTotalTimeInSeconds() {
-    return totalTimeInSeconds;
-  }
-
-  public void setTotalTimeInSeconds(int totalTimeInSeconds) {
-    this.totalTimeInSeconds = totalTimeInSeconds;
-  }
 
   public String[] getSmallImageUrls() {
     return smallImageUrls;
