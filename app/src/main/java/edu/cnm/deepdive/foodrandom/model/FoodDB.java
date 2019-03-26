@@ -11,6 +11,12 @@ import edu.cnm.deepdive.foodrandom.model.dao.AccessDao;
 import edu.cnm.deepdive.foodrandom.model.dao.RecipeDao;
 import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
 
+
+/**
+ * Defines the local database as a collection of its entities and converters, with the singleton
+ * pattern implemented for app-wide use of a single connection, and declares methods to retrieve a
+ * data access object (DAO) for the database entities.
+ */
 @Database(
     entities = {Recipe.class},
     version = 1,
@@ -19,14 +25,29 @@ import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
 @TypeConverters(Converters.class)
 public abstract class FoodDB extends RoomDatabase {
 
-  public static final String DB_NAME = "food_db";
+  private static final String DB_NAME = "food_db";
 
+  /**
+   *Returns the single instance of {@link FoodDB} for the current application context.
+   *
+   *@return single {@link FoodDB} instance reference.
+   */
   public synchronized static FoodDB getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
+  /**
+   *Returns an instance of a Room-generated implementation of {@link RecipeDao}.
+   *
+   *@return data access object for CRUD operations involving {@link Recipe} instances.
+   */
   public abstract RecipeDao getRecipeDao();
 
+  /**
+   *Returns an instance of a Room-generated implementation of {@link AccessDao}.
+   *
+   *@return data access object for CRUD operations involving {@link Recipe} instances.
+   */
   public abstract AccessDao getAccessDao();
 
   private static class InstanceHolder {
@@ -36,15 +57,25 @@ public abstract class FoodDB extends RoomDatabase {
         .build();
   }
 
+  /**
+   * Supports conversion operations for persistence of relevant types not natively supported by
+   * Room/SQLite.
+   */
   public static class Converters {
 
     private static final String JOIN_DELIMITER = "|";
     private static final String SPLIT_DELIMITER = "\\|";
 
+    /**
+     * Converts a {@link String[]} to an {@link String} and returns the {@link String}.
+     *
+     * @param values as a string.
+     * @return a {@link String} instance.
+     */
     @TypeConverter
     public static String stringArrayToString(String[] values) {
       StringBuilder builder = new StringBuilder();
-      for (String value: values) {
+      for (String value : values) {
         builder.append(value);
         builder.append(JOIN_DELIMITER);
       }
@@ -52,6 +83,12 @@ public abstract class FoodDB extends RoomDatabase {
       return builder.toString();
     }
 
+    /**
+     * Converts a {@link String} to a {@link String[]} and returns the {@link String[]}.
+     *
+     * @param value as a string array
+     * @return a {@link String[]} instance.
+     */
     @TypeConverter
     public static String[] stringToStringArray(String value) {
       return value.split(SPLIT_DELIMITER);

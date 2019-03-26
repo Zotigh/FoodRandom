@@ -1,5 +1,6 @@
 package edu.cnm.deepdive.foodrandom.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,23 +8,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import edu.cnm.deepdive.foodrandom.R;
 import edu.cnm.deepdive.foodrandom.model.FoodDB;
-import edu.cnm.deepdive.foodrandom.model.dao.RecipeDao;
 import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
 import java.util.Objects;
 
+/**
+ * Populates a {@link TextView} with ingredients and recipe name from the recipe. and loads {@link ImageView} with the image URL of the recipe for the currently selected recipe.
+ */
 public class DisplaySavedRecipesFragment extends Fragment {
 
   private ListView recipesListView;
   private ImageView imageView;
   private TextView textView;
 
+  /**
+   * Creates a new instance of DisplayedSavedRecipes and assigns it an id, then saves it to a new bundle.
+   *
+   * @param id current {@link Recipe}
+   * @return current {@link Recipe} instance
+   */
   public static DisplaySavedRecipesFragment newInstance(Long id) {
     DisplaySavedRecipesFragment f = new DisplaySavedRecipesFragment();
 
@@ -45,12 +53,14 @@ public class DisplaySavedRecipesFragment extends Fragment {
     imageView = view.findViewById(R.id.recipe_image);
     textView = view.findViewById(R.id.recipe_name);
 
+    assert getArguments() != null;
     long id = getArguments().getLong("id", 0);
     new LoadRecipeTask().execute(id);
     return view;
   }
 
 
+  @SuppressLint("StaticFieldLeak")
   private class LoadRecipeTask extends AsyncTask<Long, Void, Recipe> {
 
     @Override
@@ -70,5 +80,7 @@ public class DisplaySavedRecipesFragment extends Fragment {
       recipesListView.setAdapter(adapter);
 
     }
+
   }
+
 }

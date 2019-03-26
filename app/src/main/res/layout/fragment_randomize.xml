@@ -7,30 +7,6 @@
   android:background="@android:color/white"
   android:orientation="vertical">
 
-  <!--
-    <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/randomize_fragment"
-      android:textSize="30sp"
-      android:textStyle="bold"/>
-  -->
-
-  <!--
-  <Spinner
-    android:id="@+id/spinnerMeat"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="50dp"
-    android:text="@string/choose_meat"/>
-
-  <Spinner
-    android:id="@+id/spinnerVegetable"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:text="@string/choose_vegetable"/> -->
-
   <android.support.design.widget.TextInputLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

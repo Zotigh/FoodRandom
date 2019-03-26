@@ -4,6 +4,9 @@ import com.google.gson.annotations.Expose;
 import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
 import java.util.Random;
 
+/**
+ * Saves {@link Recipe} instances in a plain old java object, gets matches for the desired returned fields and randomizes.
+ */
 public class RecipeResponse {
 
   private Random rng;

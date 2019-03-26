@@ -1,16 +1,15 @@
 package edu.cnm.deepdive.foodrandom;
 
-import static edu.cnm.deepdive.foodrandom.R.styleable.BottomNavigationView;
-
-import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import edu.cnm.deepdive.foodrandom.fragments.RandomizeFragment;
 import edu.cnm.deepdive.foodrandom.controller.SavedRecipesFragment;
 
+/**
+ * sets the nav activity to there perspective fragments. Primary controller for switching between fragments
+ */
 public class MainActivity extends AppCompatActivity {
 
   @Override
@@ -20,33 +19,25 @@ public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
     bottomNav.setOnNavigationItemSelectedListener(navListener);
-
-    //I added this if statement to keep the selected fragment when rotating the device
-    if (savedInstanceState == null) {
-      getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-          new RandomizeFragment()).commit();
-    }
   }
 
   private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-      new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-          Fragment selectedFragment = null;
+      item -> {
+        Fragment selectedFragment = null;
 
-          switch (item.getItemId()) {
-            case R.id.navigation_randomize:
-              selectedFragment = new RandomizeFragment();
-              break;
-            case R.id.navigation_recipes:
-              selectedFragment = new SavedRecipesFragment();
-              break;
-          }
-
-          getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-              selectedFragment).commit();
-
-          return true;
+        switch (item.getItemId()) {
+          case R.id.navigation_randomize:
+            selectedFragment = new RandomizeFragment();
+            break;
+          case R.id.navigation_recipes:
+            selectedFragment = new SavedRecipesFragment();
+            break;
         }
+
+        assert selectedFragment != null;
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+            selectedFragment).commit();
+
+        return true;
       };
 }

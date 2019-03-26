@@ -20,7 +20,9 @@ public interface RecipeService {
   @GET("api/recipes")
   Call<RecipeResponse> getRecipes(@Query("_app_id") String appId, @Query("_app_key") String apiKey, @Query("q") String searchTerm);
 
-
+  /**
+   * uses retro fit and converts to a gson
+   */
   class InstanceHolder {
 
     private static final RecipeService INSTANCE;
@@ -43,6 +45,9 @@ public interface RecipeService {
 
   }
 
+  /**
+   * Creates a base fluent Async Task to get a response from the api
+   */
   class RecipesTask extends BaseFluentAsyncTask<String, Void, Recipe, Recipe> {
 
     @Nullable

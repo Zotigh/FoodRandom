@@ -23,6 +23,9 @@ import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
 import edu.cnm.deepdive.foodrandom.service.RecipeService;
 import java.util.Objects;
 
+/***
+ *Acts as the main fragment retreaving Recipes from the api and populating the {@link ListView}.
+ */
 public class RandomizeFragment extends Fragment {
 
   private Button ranButton;
@@ -70,17 +73,7 @@ public class RandomizeFragment extends Fragment {
       FoodDB.getInstance().getRecipeDao().insert(recipes);
       return null;
     }
+
   }
-//  private boolean validateIngredient() {
-//    String ingredientInput = textInputIngredient.getEditText().getText().toString().trim();
-//
-//    if (ingredientInput.isEmpty()) {
-//      textInputIngredient.setError("Field can't be left empty");
-//      return false;
-//    } else {
-//      textInputIngredient.setError(null);
-//      return true;
-//    }
-//  }
 
 }

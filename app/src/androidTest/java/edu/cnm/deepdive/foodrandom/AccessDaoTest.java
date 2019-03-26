@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.foodrandom.model.dao;
+package edu.cnm.deepdive.foodrandom;
 
 import static org.junit.Assert.*;
 
@@ -6,6 +6,7 @@ import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import edu.cnm.deepdive.foodrandom.model.FoodDB;
+import edu.cnm.deepdive.foodrandom.model.dao.AccessDao;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

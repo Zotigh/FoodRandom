@@ -22,6 +22,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Supplies {@link View} instances&mdash;each presenting an {@link Recipe} instance, to a {@link
+ * ListView}.
+ * <p>Each view item is clickable (the {@link ListView.OnClickListener} attached to each is the host
+ */
 public class SavedRecipesFragment extends Fragment implements OnItemClickListener {
 
   private List<Recipe> recipes;
@@ -69,6 +74,12 @@ public class SavedRecipesFragment extends Fragment implements OnItemClickListene
     return view;
   }
 
+  /**
+   * Handles a click on a {@link View} in the {@link ListView} by extracting the {@link Recipe}
+   * reference returned by {@link View#getTag()}, showing the display saved recipes fragment
+   *
+   * @param view visual presentation of a single {@link Recipe} instance.
+   */
   @Override
   public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
     Recipe selectedRecipe = recipes.get(i);
