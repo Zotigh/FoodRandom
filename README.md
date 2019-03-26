@@ -1,5 +1,3 @@
-# FoodRandom(RanFoo)
-
 # generate a random food plate
 
 # Motives/Aims
