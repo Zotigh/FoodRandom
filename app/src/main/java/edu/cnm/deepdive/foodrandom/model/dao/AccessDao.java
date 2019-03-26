@@ -5,6 +5,7 @@ import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import edu.cnm.deepdive.foodrandom.model.entity.Recipe;
+import java.util.List;
 
 /**
  * Declares basic CRUD operations for {@link Recipe} instances in the local database, using Room
@@ -20,7 +21,7 @@ public interface AccessDao {
    * @param recipes {@link Recipe} instance to be inserted.
    */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  void insert(Recipe... recipes);
+  List<Long> insert(Recipe... recipes);
 
   /**
    * Will Delete one or more {@link Recipe} instances from local database when implemented.

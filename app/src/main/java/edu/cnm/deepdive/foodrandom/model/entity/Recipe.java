@@ -19,7 +19,6 @@ public class Recipe {
   @PrimaryKey(autoGenerate = true)
   private long id;
 
-  @NonNull
   @Expose
   private String[] ingredients;
 

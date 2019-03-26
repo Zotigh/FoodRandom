@@ -74,6 +74,9 @@ public abstract class FoodDB extends RoomDatabase {
      */
     @TypeConverter
     public static String stringArrayToString(String[] values) {
+      if (values == null){
+        return null;
+      }
       StringBuilder builder = new StringBuilder();
       for (String value : values) {
         builder.append(value);
@@ -91,6 +94,9 @@ public abstract class FoodDB extends RoomDatabase {
      */
     @TypeConverter
     public static String[] stringToStringArray(String value) {
+      if (value == null){
+        return null;
+      }
       return value.split(SPLIT_DELIMITER);
     }
   }
