@@ -7,7 +7,7 @@
   and this will open the door to more opportunities to explore different dishes. I often have this problem and think it would be 
   nice to have something like this.
 
- # User Stories
+# User Stories
  	
   * AS A/AN...  I WANT TO...	 SO THAT...
  	* As a (User) I want to (Have a system that can take what I like and make a random decision) so that (I dont have to decide what to make for a meal.) 
