@@ -49,6 +49,6 @@
  + [ERD](Food(Random)ERD(V.3).pdf)
  + [DDL](docs/ddl.md)
  + [Javadoc](docs/api/)
- + [Wire Frame](https://github.com/Zotigh/FoodRandom/blob/master/Random%20Food%20Wire%20Frame.pdf)
+ + [Wire Frame](Random%20Food%20Wire%20Frame.pdf)
  + [Basic User Instructions](basicUserInstructions.md)
  + [Build Instructions](BuildInstructions.md)

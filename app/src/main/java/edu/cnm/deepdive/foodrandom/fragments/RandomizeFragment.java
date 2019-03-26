@@ -1,5 +1,7 @@
 package edu.cnm.deepdive.foodrandom.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -51,7 +53,8 @@ public class RandomizeFragment extends Fragment {
     textView = view.findViewById(R.id.recipe_name);
     saveButton = view.findViewById(R.id.save_button);
 
-    ranButton.setOnClickListener((v) -> new RecipeService.RecipesTask()
+    ranButton.setOnClickListener((v) -> {
+      new RecipeService.RecipesTask()
         .setSuccessListener((result) -> {
           ArrayAdapter<String> adapter = new ArrayAdapter<>(
               Objects.requireNonNull(this.getContext()), android.R.layout.simple_list_item_1, result.getIngredients());
@@ -61,7 +64,15 @@ public class RandomizeFragment extends Fragment {
           Log.d(getClass().getSimpleName(), result.toString());
           saveButton.setOnClickListener((b) -> new SaveRecipeTask().execute(result));
         })
-        .execute(textInputIngredient.getText().toString()));
+        .execute(textInputIngredient.getText().toString());
+      SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+      SharedPreferences.Editor editor = sharedPref.edit();
+      editor.putString(getString(R.string.saved_text), textInputIngredient.getText().toString());
+      editor.apply();
+    });
+    SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+    String savedInput = sharedPref.getString(getString(R.string.saved_text), "");
+    textInputIngredient.setText(savedInput);
     return view;
   }
 
