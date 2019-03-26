@@ -7,11 +7,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static org.hamcrest.CoreMatchers.anything;
 
 /**
  * makes a simple test for the Main Activity
@@ -33,6 +35,12 @@ public class MainActivityTest {
         //Make sure fragment is loaded
         onView(withId(R.id.saved_recipes_layout))
                 .check(matches(isDisplayed()));
+
+        onData(anything()).atPosition(0).perform(click());
+
+        onView(withId(R.id.recipe_name))
+            .check(matches(isDisplayed()));
+
 
     }
 
