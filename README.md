@@ -2,9 +2,6 @@
 
 # generate a random food plate
 
-
-## Random Food
-
 # Motives/Aims
  * The basic functionality will be to randomize food based on something the users types and return a name, picture and list 
  of ingredients to see if that would be something they would like to make.
