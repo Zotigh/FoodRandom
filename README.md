@@ -30,7 +30,7 @@
   * Min Sdk Version: 21
 	
 # External Sources
-* [Yummily Api]{https://developer.yummly.com/}
+* [Yummily Api](https://developer.yummly.com/)
  
 #Asthetics
 * I think that to me it is apparent that there are some things that could be visually done to improve the asthetics. Mainly I think the image that is loaded is very bad to say the least. The ListView has no borders. The layout could possibly have a better back ground than just plain white. The Buttons could be customized. Some animations would be cool and make it seem more "alive" and thus more visually pleasing.
