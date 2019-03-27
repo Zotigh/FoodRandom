@@ -33,7 +33,7 @@ public class MainActivityTest {
         onView(withId(R.id.text_input_ingredient))
             .perform(typeText("beef"));
 
-        //Click on Navigation
+        //Click on randomize button
         onView(withId(R.id.randomize_button))
             .perform(click());
 
