@@ -13,6 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+
 package edu.cnm.deepdive.foodrandom.model.dao;
 
 import android.arch.persistence.room.Dao;
