@@ -5,10 +5,10 @@
  I feel that the people that would be intrested are those people that have no clue as to the many ways you can cook something
   and this will open the door to more opportunities to explore different dishes. I often have this problem and think it would be 
   nice to have something like this.
-* Use of multiple fragments with a bottom navigation as well as use of the back button between the list of recipes and the fragment it is displayed from.
+* Use of multiple fragments with a `BottomNavigationView` as well as use of the back button between the list of recipes and the fragment it is displayed from.
 * Shared preference that saves the last input the user type in the text editor
 * Use of a SQLite local database that saves the users saved recipe information.
-* The use of a list view to display the users saved recipes.
+* The use of a `ListView` to display the users saved recipes.
 * Consumption of External Sources from the Yummily api (see bellow for link to api).
 * Custom drawables in the standard android icon format
 * Automated testing that tests a Dao as well as basic app functionality.
