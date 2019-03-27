@@ -1,7 +1,3 @@
-# FoodRandom(RanFoo)
-
-# generate a random food plate
-
 # Purpose
  The basic functionality of this app is to randomize food based on something the users types and return a name, picture and list 
  of ingredients to see if that would be something they would like to make.
@@ -44,7 +40,7 @@
 * Clicks on the first item in the list
 * Finally checks to make sure that the fragment displaying the selected item from the list is displayed. 
 	
-# 3rd part resources
+# 3rd-party resources
 ### Libraries
 * [Google Gson](https://github.com/google/gson)
 * [Retrofit 2](https://square.github.io/retrofit/)
@@ -79,6 +75,11 @@
  
 # Copyrights and Licenses
 Copyright 2019 Lance Zotigh & Deep Dive Coding
+Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+* [Link to the Apache License](http://www.apache.org/licenses/LICENSE-2.0)
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 * [junit 4 License](https://junit.org/junit4/license.html)
 * [gson](https://github.com/google/gson/blob/master/LICENSE)
 * [retrofit](https://square.github.io/retrofit/)
