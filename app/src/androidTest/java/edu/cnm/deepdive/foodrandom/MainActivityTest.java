@@ -16,6 +16,7 @@
 
 package edu.cnm.deepdive.foodrandom;
 
+import android.arch.persistence.room.Delete;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -25,7 +26,9 @@ import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.removeGlobalAssertion;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -45,12 +48,19 @@ public class MainActivityTest {
     //Order matters!!
     @Test
     public void navigateToRandomize(){
+        //Deletes anything in the text editor.
+        onView(withId(R.id.text_input_ingredient))
+            .perform(clearText());
+
         //puts beef in the text editor
         onView(withId(R.id.text_input_ingredient))
             .perform(typeText("beef"));
 
         //Click on randomize button
         onView(withId(R.id.randomize_button))
+            .perform(click());
+        //Clicks on the save button
+        onView(withId(R.id.save_button))
             .perform(click());
 
         //Click on Navigation
