@@ -17,11 +17,6 @@
 * Custom drawables in the standard android icon format
 * Automated testing that tests a Dao as well as basic app functionality.
 
-# User Stories 
-### AS A/AN...  I WANT TO...	 SO THAT...
- * As a (User) I want to (Have a system that can take what I like and make a random decision) so that (I dont have to decide what to make for a meal.) 
- * As a (User) I want to (Be able to have something that will contour to my dietary restrictions) so that (I dont have to worry.)
-
 # Current State
  * This app is semi usable with out an internet connection as the user can save a recipe they are interested in.  
  * At the time of this there are no bugs I am aware of. There are however a couple things that I given more time 
@@ -30,38 +25,12 @@
  delete an item in the list of saved fragments. The third is to enable a link that will take the user to the Yummily 
  website so they can see preparation instructions as well as tutorial videos on the result they get back. Besides that
  I believe my app Is semi close complete.
-
-# android version Tested on
-  * LGE LG_Q710AL (Android 8.1.0 API 27) LG Stylo 4
-  * Target Sdk Version: 28
-  * Min Sdk Version: 21
-	
-# 3rd part resources
-* implementation 'com.google.code.gson:gson:2.8.5'
-* implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-* implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-* implementation 'com.facebook.stetho:stetho:1.5.0'
-* implementation 'com.google.android.gms:play-services-plus:16.0.0'
-* implementation 'android.arch.persistence.room:runtime:1.1.1'
-* implementation 'com.github.bumptech.glide:glide:4.9.0'
-	
-# External Sources
-* [Yummily Api](https://developer.yummly.com/)
  
-# Aesthetics
-* I think that to me it is apparent that there are some things that could be visually done to improve the aesthetics. Mainly I think the image that is loaded is very bad to say the least. The ListView has no borders. The layout could possibly have a better back ground than just plain white. The Buttons could be customized. Some animations would be cool and make it seem more "alive" and thus more visually pleasing.
-* Style the Buttons.
-* Hide the text Editor once a selection is made.
-* Hide the save button until the user gets a response from the api back. 
-* Change the layout to be a scroll view.
-* Add animations.
-
-# Stretch Goals(simplest to hardest)
-* Add a delete option in the list of saved fragments.
-* Save the fragment to the back stack of the main fragment so when you switch between them it is not lost.
-* Make a second request to the api for the instructions on the how to make the recipe as it requires a separate request with different request params.
-
 # Testing
+###  Physical android device and version Tested on
+#### LGE LG_Q710AL (Android 8.1.0 API 27) LG Stylo 4
+* No Known issues have occurred, except for functions that are not yet implemented.
+
 ### AccessDaoTest
 #### Operations
 * Creates a new Instance of Recipe.
@@ -74,19 +43,54 @@
 * Checks to make sure the saved fragment was loaded 
 * Clicks on the first item in the list
 * Finally checks to make sure that the fragment displaying the selected item from the list is displayed. 
+	
+# 3rd part resources
+### Libraries
+* [Google Gson](https://github.com/google/gson)
+* [Retrofit 2](https://square.github.io/retrofit/)
+* [Facebook Stetho](https://github.com/facebook/stetho)
+* [Glide](https://github.com/bumptech/glide)
+* [Room](https://developer.android.com/topic/libraries/architecture/room)
+* [Play Services Plus](https://developers.google.com/android/guides/releases)
 
-# Copyrights and Licenses
-* junit 4 [License](https://junit.org/junit4/license.html)
-* [gson](https://github.com/google/gson/blob/master/LICENSE)
-* [retrofit](https://square.github.io/retrofit/)
-* stetho [License](https://github.com/facebook/stetho/blob/master/LICENSE)
-* [play services plus](https://developers.google.com/android/guides/setup)
-* [glide](https://github.com/bumptech/glide/blob/master/LICENSE)
+* implementation 'com.google.android.gms:play-services-plus:16.0.0'
 
-## Links to more documentation
+	
+## External Sources
+* [Yummily Api](https://developer.yummly.com/)
+ 
+# Potential Improvements
+### Stretch Goals(simplest to hardest)
+* Add a delete option in the list of saved fragments.
+* Save the fragment to the back stack of the main fragment so when you switch between them it is not lost.
+* Make a second request to the api for the instructions on the how to make the recipe as it requires a separate request with different request params.
+
+### Aesthetics
+* I think that to me it is apparent that there are some things that could be visually done to improve the aesthetics. Mainly I think the image that is loaded is very bad to say the least. The ListView has no borders. The layout could possibly have a better back ground than just plain white. The Buttons could be customized. Some animations would be cool and make it seem more "alive" and thus more visually pleasing.
+* Style the Buttons.
+* Hide the text Editor once a selection is made.
+* Hide the save button until the user gets a response from the api back. 
+* Change the layout to be a scroll view.
+* Add animations.
+
+# Design & technical documentation
  + [ERD](Food(Random)ERD(V.3).pdf)
  + [DDL](docs/ddl.md)
  + [Javadoc](docs/api/)
  + [Wire Frame](Random%20Food%20Wire%20Frame.pdf)
- + [Basic User Instructions](basicUserInstructions.md)
+ + [User Stories](userStories.md)
+ 
+# Copyrights and Licenses
+Copyright 2019 Lance Zotigh & Deep Dive Coding
+* [junit 4 License](https://junit.org/junit4/license.html)
+* [gson](https://github.com/google/gson/blob/master/LICENSE)
+* [retrofit](https://square.github.io/retrofit/)
+* [stetho License](https://github.com/facebook/stetho/blob/master/LICENSE)
+* [play services plus](https://developers.google.com/android/guides/setup)
+* [glide](https://github.com/bumptech/glide/blob/master/LICENSE)
+
+
+ # Instructions
  + [Build Instructions](BuildInstructions.md)
+ + [Basic User Instructions](basicUserInstructions.md)
+ 
