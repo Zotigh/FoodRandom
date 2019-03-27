@@ -52,9 +52,6 @@
 * [Glide](https://github.com/bumptech/glide)
 * [Room](https://developer.android.com/topic/libraries/architecture/room)
 * [Play Services Plus](https://developers.google.com/android/guides/releases)
-
-* implementation 'com.google.android.gms:play-services-plus:16.0.0'
-
 	
 ## External Sources
 * [Yummily Api](https://developer.yummly.com/)
