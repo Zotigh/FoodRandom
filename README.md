@@ -66,6 +66,15 @@
 #### Operations
 * Creates a new Instance of Recipe.
 
+### MainActivityTest
+#### Operations
+* Types the string "beef" in the text editor
+* Performs the click on the randomize button
+* Clicks on the navigation to the saved fragment
+* Checks to make sure the saved fragment was loaded 
+* Clicks on the first item in the list
+* Finally checks to make sure that the fragment displaying the selected item from the list is displayed. 
+
 # Copyrights and Licenses
 * junit 4 [License](https://junit.org/junit4/license.html)
 * [gson](https://github.com/google/gson/blob/master/LICENSE)
