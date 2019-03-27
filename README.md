@@ -14,8 +14,8 @@
 * Automated testing that tests a Dao as well as basic app functionality.
 
 # Current State
- * This app is semi usable with out an internet connection as the user can save a recipe they are interested in.  
- * At the time of this there are no bugs I am aware of. There are however a couple things that I given more time 
+* This app is semi usable with out an internet connection as the user can save a recipe they are interested in.  
+* At the time of this there are no bugs I am aware of. There are however a couple things that I given more time 
  would have liked to implemented. This includes three main things... The first is having the search result fragment 
  be saved on the back stack and not disappear every time you switch between fragments. The second is being able to 
  delete an item in the list of saved fragments. The third is to enable a link that will take the user to the Yummily 
@@ -42,15 +42,15 @@
 	
 # 3rd-party resources
 ### Libraries
-* [Google Gson](https://github.com/google/gson)
-* [Retrofit 2](https://square.github.io/retrofit/)
-* [Facebook Stetho](https://github.com/facebook/stetho)
-* [Glide](https://github.com/bumptech/glide)
-* [Room](https://developer.android.com/topic/libraries/architecture/room)
-* [Play Services Plus](https://developers.google.com/android/guides/releases)
+ + [Google Gson](https://github.com/google/gson)
+ + [Retrofit 2](https://square.github.io/retrofit/)
+ + [Facebook Stetho](https://github.com/facebook/stetho)
+ + [Glide](https://github.com/bumptech/glide)
+ + [Room](https://developer.android.com/topic/libraries/architecture/room)
+ + [Play Services Plus](https://developers.google.com/android/guides/releases)
 	
 ## External Sources
-* [Yummily Api](https://developer.yummly.com/)
+ + [Yummily Api](https://developer.yummly.com/)
  
 # Potential Improvements
 ### Stretch Goals(simplest to hardest)
@@ -77,15 +77,13 @@
 Copyright 2019 Lance Zotigh & Deep Dive Coding
 Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
-* [Link to the Apache License](http://www.apache.org/licenses/LICENSE-2.0)
+ + [Link to the Apache License](http://www.apache.org/licenses/LICENSE-2.0)
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
-* [junit 4 License](https://junit.org/junit4/license.html)
-* [gson](https://github.com/google/gson/blob/master/LICENSE)
-* [retrofit](https://square.github.io/retrofit/)
-* [stetho License](https://github.com/facebook/stetho/blob/master/LICENSE)
-* [play services plus](https://developers.google.com/android/guides/setup)
-* [glide](https://github.com/bumptech/glide/blob/master/LICENSE)
+ + [junit 4 License](https://junit.org/junit4/license.html)
+ + [gson](https://github.com/google/gson/blob/master/LICENSE)
+ + [stetho License](https://github.com/facebook/stetho/blob/master/LICENSE)
+ + [glide](https://github.com/bumptech/glide/blob/master/LICENSE)
 
 
 # Instructions
