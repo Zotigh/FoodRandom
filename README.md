@@ -87,7 +87,7 @@ Copyright 2019 Lance Zotigh & Deep Dive Coding
 * [glide](https://github.com/bumptech/glide/blob/master/LICENSE)
 
 
- # Instructions
+# Instructions
  + [Build Instructions](BuildInstructions.md)
  + [Basic User Instructions](basicUserInstructions.md)
  
