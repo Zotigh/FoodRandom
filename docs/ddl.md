@@ -6,6 +6,4 @@ CREATE TABLE IF NOT EXISTS `Recipe` (
  `smallImageUrls` 	TEXT, 
  `recipeKey` 		TEXT
  );
- 
- 
 ```
